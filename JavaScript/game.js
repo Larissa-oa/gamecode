@@ -185,11 +185,11 @@ muteBtn() {
 
     if (this.isMuted) {
         this.themeSong.pause()
-        this.muteButtonElement.innerText = 'Play'
+        this.muteButtonElement.innerText = 'Unmute'
     }
         else {
         this.themeSong.play()
-        this.muteButtonElement.innerText = 'Unmute'  
+        this.muteButtonElement.innerText = 'Mute'
 }
 }
 
