@@ -1,0 +1,319 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: 'Madimi One', sans-serif;
+    overflow: hidden;
+}
+
+#game-intro-page {
+    background-image: url('./images/backgrounds2/back-w.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    height: 100vh;
+    width: 100%;
+    animation: zoomOut 3s ease-out forwards;
+}
+
+.start-btn {
+    grid-column: 3;
+    width: 28vw;
+    height: 10vh;
+    border-radius: 10px;
+    background-color: rgba(97, 42, 10, 0.856);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 80px;
+    flex-shrink: 1;
+    margin-left: 50px; 
+}
+
+#start-game{
+    grid-row: 15;
+
+}
+#mute-game{
+    grid-row: 17;
+}
+
+#register-score-form {
+    margin-left: 100px;
+    grid-column: 4;
+    grid-row: 2;
+}
+
+#register-score-form label {
+ color: white;
+ font-size: 1.5em;
+ letter-spacing: 1.2;
+ text-shadow: 2px 2px 4px rgba(97, 96, 96, 0.5);
+}
+
+#player-name {
+    height: 30px;
+    width: 170px;
+}
+
+#register-game-btn {
+    margin-left: 15px;
+    margin-top: 10px;
+    height: 40px;
+    width: 150px;
+  }
+
+/*Bat signal page*/
+
+#bat-page{
+    background-image: url('./images/backgrounds2/backgrounddown.jpg');
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: bottom;
+    display:none; /*change back to display flex*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+#bat-signal {
+    position: absolute;
+    height: 780px;
+    width: 300px;
+    margin: 120px 0 0 670px;
+}
+
+#initial-baileys {
+    position: absolute;
+    height: auto;
+    width: 220px;
+    margin: 400px 0 0 0;
+    left: 0;
+    animation: jumpForward 1.5s ease-in-out infinite;
+    z-index: 10;
+}
+
+@keyframes jumpForward {
+    0% {
+      transform: translateX(0) translateY(0); /* Starting position */
+    }
+    25% {
+      transform: translateX(75px) translateY(-30px); /* Move right and up (jump) */
+    }
+    50% {
+      transform: translateX(150px) translateY(0); /* Move forward and down */
+    }
+    75% {
+      transform: translateX(285px) translateY(-30px); /* Move right and up again (jump) */
+    }
+    100% {
+      transform: translateX(460px) translateY(0); /* End position */
+    }
+  }
+
+.message {
+    display: none;
+    color: white;
+    background-color: rgba(97, 42, 10, 0.856);
+    box-shadow: 0 5px 10px rgba(0.8, 0.8, 0.8, 2);
+    border-radius: 15px;
+    width: 600px;
+    height: 140px;
+    text-align: center;
+    border: 1px solid;
+    padding-bottom: 40px;
+    z-index: 10;
+    margin-bottom: 100px;
+   
+}
+
+.message p {
+    align-items: center;
+    margin: 30px;
+    line-height: 1.6;
+    font-size: 1.2em;
+}
+
+#close-message {
+    margin: 20px 0 0 550px;
+    height: 20px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    font-weight: bold;
+    color:rgba(97, 42, 10, 0.856);
+}
+
+#close-message button:hover {
+    background-color: rgb(128, 132, 137);
+    transform: translateY(-3px);
+}
+
+#decision-message {
+    height: 200px;
+    margin-bottom: 80px;
+}
+
+.btn {
+    padding: 15px 40px;
+    margin: 20px 10px;
+    border-radius: 20px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.19);
+    transition: transform 0.2s;
+    color:rgb(4, 28, 60);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.7em;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.btn button:hover {
+    transform: translateY(-3px);
+    background-color: rgb(128, 132, 137);
+}
+
+/*Main game page */
+
+#game-main-page{
+    display: none; /*change back to display block*/
+    background-image: url('./images/backgrounds2/mainGame.jpg');
+    background-size:cover;
+    background-repeat: repeat-x;
+    background-position: bottom left;
+    height: 900px;
+    width: 100%;
+    animation: moveBackground 4s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% {
+      background-position: 0 0; /* Start position on the left */
+    }
+    100% {
+      background-position: 100% 0; /* End position on the right */
+    }
+  }
+
+#progress {
+    position: absolute;
+    margin-left: 65px;
+    margin-top: 10px;
+    width: 35%;
+    height: 30px;
+    background-color: #dddddde0;
+    border-radius: 10px;
+    border:1px solid rgb(128, 132, 137);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.19);
+} 
+
+#progress-bar {
+    height:30px;
+    width: 100%;
+    background-color: rgba(19, 104, 6, 0.898);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#score-count {
+    padding: 20px;
+}
+
+#score-count h2, h3 {
+    color: white;
+    text-shadow:2px 2px 4px rgba(97, 96, 96, 0.5); 
+    text-transform: uppercase;
+}
+
+.lives-container {
+    display: flex;
+    align-items: center;
+}
+
+.lives {
+    display: flex;
+    gap: 10px; 
+}
+
+#lives-img {
+    height: 50px;
+}
+
+
+
+/*Game end page*/
+
+#game-end-page{
+    display: none; /* change back to display: grid*/
+    grid-auto-flow: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./images/backgrounds2/nightend.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 900px;
+    width: 100%;
+}
+
+#endgame-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    width: 700px;
+    padding: 0 20px;
+    font-size: 1.3em;
+    margin-top: -230px;
+}
+
+#endgame-message h2{
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(97, 96, 96, 0.5);
+}
+
+/*#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 50%;
+    background-color: rgba(57, 24, 4, 0.703);
+    margin: 10px 180px 0 ;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8), 0 5px 15px rgba(0, 0, 0, 1);
+    border: 1px solid white;
+}
+
+#form ol {
+    margin-top: -20px;
+}*/
+
+#baileys-end-page {
+    position: absolute;
+    height:450px;
+    width: auto;
+    margin: 400px 0 0 20px;
+    z-index: 10;
+}
+
+#restart-btn {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+

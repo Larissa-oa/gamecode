@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Bailey's Wild West</title>
+</head>
+
+<body>
+    <main>
+        <!-- game initial page / buttons to start / to mute / register -->
+         <div id="game-intro-page">
+            <button id="start-game" class="start-btn">Start Game</button>
+            <button id="mute-game" class="start-btn">Mute</button>
+            <!-- CHECK FORM TO ADD LATER<form id="register-score-form">
+                <label for="player-name">Enter your name:</label>
+                <input type="text" id="player-name" name="player-name" required>
+                <button type="submit" class="start-btn" id="register-game-btn">Register</button>
+            </form>-->
+         </div>
+
+         <!--Batactivation page / hidden using CSS styles -->
+         <div id="bat-page">
+            <span id="decision-message" class="message"><p>"Well, partner, looks like the bat signal’s lit up in the sky! Time to saddle up and see if this town’s in need of some dark justice! Will you answer the call?"<br> 
+                <button id="btn-yes" class="btn">Yes</button><button id="btn-no" class="btn">No</button></p></span>
+            <span id="yes-message" class="message"><span><button id="close-message">x</button></span><p>"Well, look at you! A cowboy in a cape—this oughta be interesting.Let’s show 'em what justice looks like in the Wild West!"</p></span>
+            <span id="no-message"class="message"><span><button id="close-message">x</button></span><p> "Who needs your permission? I am a French bulldog – it's not like I will listen to anyone. I'm taking those Bat powers anyway!"</p></span>
+            <img src="./styles/images/points/batsignal.png" id="bat-signal" alt="Bat symbol" />
+            <img src="./styles/images/players/cowboybaileys.png" id="initial-baileys" alt="Baileys">
+         </div>
+
+         <!--game page /hidden using CSS styles-->
+         <div id="game-main-page">
+          <div id="score-count">
+            <h2>Paw Points</h2>
+            <h3>Score: <span id="score" class="counter">0</span></h3>
+            <span class="lives">
+            <h3>Lives: </h3>
+                <div id="progress">
+                <div id="progress-bar"></div>
+            </div>
+               <!-- <img src="./styles/images/points/lives-Photoroom.png"  id="lives-img1" alt="life count symbol"/>
+                <img src="./styles/images/points/lives-Photoroom.png"  id="lives-img2" alt="life count symbol"/>
+                <img src="./styles/images/points/lives-Photoroom.png"  id="lives-img3" alt="life count symbol"/> -->
+            </span>
+          </div>
+         </div>
+
+         <!--game end page -->
+         <div id="game-end-page">
+            <div class="message" id="endgame-message">
+            <h2>Game over</h2>
+            <span>"Looks like the dust has settled a bit too soon, partner. Don’t worry, every cowboy has their bad day. Ride back into town and give it another go!"<br>
+               <!--<div id = "form">
+                <h3>High Scores</h3>
+                <ol id="high-scores"></ol>
+            </div>-->
+                <br/>
+                <button id="restart-btn" class="btn">Restart</button></span>
+        </div>
+        <img src="./styles/images/players/finalbaileys.png" id="baileys-end-page" alt="Baileys wearing a cone of shame" />
+         </div>
+
+
+    </main>
+    <script type="text/javascript" src="./JavaScript/enemy.js"></script>
+    <script type="text/javascript" src="./JavaScript/projectile.js"></script>
+    <script type="text/javascript" src="./JavaScript/points.js"></script>
+    <script type="text/javascript" src="./JavaScript/obstacles.js"></script>
+    <script type="text/javascript" src="./JavaScript/player.js"></script>
+    <script type="text/javascript" src="./JavaScript/game.js"></script>
+    <script type="text/javascript" src="./JavaScript/index.js"></script>
+
+</body>
+</html>
