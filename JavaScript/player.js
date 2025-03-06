@@ -15,9 +15,9 @@ class Player {
         this.directionX = 0
         this.directionY = 0
         this.bark = new Audio('./styles/soundeffects/bark-hit.mp3')
-        this.bark.volume = 0.2
-        this.complain = new Audio('./styles/soundeffects/baileysmad.mp3')
-        this.complain.volume = 0.2
+        this.bark.volume = 0.1
+        this.coined = new Audio('./styles/soundeffects/points.mp3')
+        this.coined.volume = 0.1
         this.element = document.createElement('img')
         this.element.src = playerImageSrc
         this.element.style.position = 'absolute'
@@ -66,6 +66,7 @@ class Player {
             playerRect.left < pointRect.right &&
             playerRect.right > pointRect.left
         ) {
+            this.coined.play()
             return true;
         } else {
             return false;

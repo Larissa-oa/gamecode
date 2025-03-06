@@ -67,13 +67,13 @@ window.onload = function () {
     //window event listener to ajdust movement of the player accordingly to the keys being used. 
     window.addEventListener('keydown', (event) => {
         if (event.code === "ArrowUp") {
-            myNewGame.player.directionY = -8;
+            myNewGame.player.directionY = -9;
         } else if (event.code === "ArrowDown") {
-            myNewGame.player.directionY =8;
+            myNewGame.player.directionY =9;
         } else if (event.code === "ArrowLeft") {
-            myNewGame.player.directionX = -8;
+            myNewGame.player.directionX = -9;
         } else if (event.code === "ArrowRight") {
-            myNewGame.player.directionX = 8;
+            myNewGame.player.directionX = 9;
         }
 
         if(event.code === 'Space') {

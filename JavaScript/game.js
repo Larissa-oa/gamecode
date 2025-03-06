@@ -18,8 +18,6 @@ class Game {
         localStorage.setItem('Name', this.playerName)*/
         this.themeSong = new Audio('./styles/soundeffects/backgroundmain.mp3')
         this.themeSong.volume = 0.1
-        this.complain = new Audio('./styles/soundeffects/baileysmad.mp3')
-        this.complain.volume = 0.2
         //TASK 7 : edit my player characteristics adding value to the parameter 
         // given to the constructor on the class player 
         this.player = new Player (
@@ -34,7 +32,7 @@ class Game {
         this.enemy = []
         this.projectile = []
         this.points = []
-        this.lives = 3
+        this.lives = 4
         this.score = 0 
         this.isMudted = false 
         this.gameIsOver = false 
