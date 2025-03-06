@@ -87,6 +87,22 @@ class Player {
             return false
         }
     }
+
+    gotShot(enemy) {
+        const playerRect = this.element.getBoundingClientRect()
+        const enemyRect = enemy.element.getBoundingClientRect()
+        if (
+            playerRect.top < enemyRect.bottom &&
+            playerRect.bottom > enemyRect.top &&
+            playerRect.left < enemyRect.right &&
+            playerRect.right > enemyRect.left
+        ) {
+            this.bark.play()
+            return true
+        } else {
+            return false
+        }
+    }
     
 
 }

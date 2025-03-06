@@ -84,7 +84,6 @@ update() {
         }
     }
 
-
     for (let j = 0; j < this.points.length; j++) {
         const currentPoint = this.points[j];
         currentPoint.move();
@@ -102,34 +101,41 @@ update() {
             currentPoint.element.remove();
             j--; 
         }
-    }
 
-   
-    for (let l = 0; l < this.projectile.length; l++) {
-        const currentProjectile = this.projectile[l];
-        currentProjectile.move();
-
-        if (currentProjectile.left > window.innerWidth) {
-            this.projectile.splice(l, 1);
-            currentProjectile.element.remove();
-            l--; 
-        }
-    for (let k = 0; k < this.enemy.length; k++) {
-        const currentEnemy = this.enemy[k];
-        currentEnemy.move()
-        for (let l = 0; l < this.projectile.length; l++) {
-            const currentProjectile = this.projectile[l];
+        for (let k = 0; k < this.enemy.length; k++) {
+            const currentEnemy = this.enemy[k];
+            currentEnemy.move();
             
-            if (currentProjectile.hit(currentEnemy)) {
-                this.projectile.splice(l, 1);
-                currentProjectile.element.remove();
+            for (let l = this.projectile.length - 1; l >= 0; l--) {
+                const currentProjectile = this.projectile[l];
+                currentProjectile.move()
+        
+                // If the projectile hits the enemy
+                if (currentProjectile.hit(currentEnemy)) {
+                    this.score +=5
+                    this.scoreElement.innerText = this.score;
+                    this.projectile.splice(l, 1);
+                    currentProjectile.element.remove();
+                    this.enemy.splice(k, 1);   
+                    currentEnemy.element.remove();
+                    break 
+                } else if (currentProjectile.left > window.innerWidth) {
+                    this.projectile.splice(l, 1);
+                    currentProjectile.element.remove();
+                }
+            }
+        
+            if (currentEnemy.left < 0) {
                 this.enemy.splice(k, 1);
                 currentEnemy.element.remove();
-                break; 
+                k--;
+            }
+    
+            if (this.player.gotShot(currentEnemy)) {
+                this.gameOver(); 
             }
         }
     }
-}
 }
 
 // game loop handles tasks like moving objects, 
@@ -153,7 +159,7 @@ gameLoop() {
         this.points.push(point)
     }
 
-   if (this.counter % 300 === 0) {
+   if (this.counter % 220 === 0) {
     console.log(this.enemy)
         const enemies = new Enemy(this.mainGameScreen)
         this.enemy.push(enemies)
@@ -169,7 +175,6 @@ gameOver() {
 
 }
 
-
 updateProgressBar () {
     const lifePercentage = (this.lives / 3) * 100
     this.progressBar.style.width = `${lifePercentage}`
@@ -180,7 +185,7 @@ muteBtn() {
 
     if (this.isMuted) {
         this.themeSong.pause()
-        this.muteButtonElement.innerText = 'Mute'
+        this.muteButtonElement.innerText = 'Play'
     }
         else {
         this.themeSong.play()
@@ -188,7 +193,8 @@ muteBtn() {
 }
 }
 
-/*updateHighScores() {
+
+/* TO BE ADDED AT A LATER TIME updateHighScores() {
     const scoresInStorage = JSON.parse(localStorage.getItem("high-scores"));
     console.log(this.nameInputElement, this.playerName)
 

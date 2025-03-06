@@ -6,6 +6,7 @@ class Projectile {
         this.height = 170;
         this.pew = new Audio ('./styles/soundeffects/laser.mp3')
         this.pew.volume = 0.1
+        this.fallingSpeed = 12
         this.element = document.createElement('img');
         this.element.src = './styles/images/points/laserVision.png'
         this.element.style.position = 'absolute';
@@ -17,7 +18,7 @@ class Projectile {
     }
 
     move() {
-        this.left += 17; 
+        this.left += this.fallingSpeed 
         this.updatePosition();
         this.pew.play()
     }
@@ -26,18 +27,16 @@ class Projectile {
         this.element.style.left = `${this.left}px`; 
     }
 
-    hit(enemy) {
-
-        if (
-            this.left < enemy.left + enemy.width &&
-            this.left + this.width > enemy.left &&
-            this.top < enemy.top + enemy.height &&
-            this.top + this.height > enemy.top
-        ) {
-            return true;
-        } else {
-            return false;
+        hit(enemy) {
+            const projectileRect = this.element.getBoundingClientRect();
+            const enemyRect = enemy.element.getBoundingClientRect();
+    
+            return (
+                projectileRect.top < enemyRect.bottom &&
+                projectileRect.bottom > enemyRect.top &&
+                projectileRect.left < enemyRect.right &&
+                projectileRect.right > enemyRect.left
+            );
         }
-    }
     
 }
