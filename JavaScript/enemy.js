@@ -4,7 +4,7 @@ class Enemy {
         this.top = Math.floor(Math.random() * (gameScreen.offsetHeight - 210)); 
         this.width = 180;
         this.height = 210;
-        this.fallingSpeed = 8
+        this.fallingSpeed = 7
 
         this.enemyImages = [
             "./styles/images/enemy/enemy1.png",

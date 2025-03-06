@@ -112,12 +112,12 @@ update() {
         
                 // If the projectile hits the enemy
                 if (currentProjectile.hit(currentEnemy)) {
-                    this.score +=5
-                    this.scoreElement.innerText = this.score;
                     this.projectile.splice(l, 1);
                     currentProjectile.element.remove();
                     this.enemy.splice(k, 1);   
                     currentEnemy.element.remove();
+                    this.score +=5
+                    this.scoreElement.innerText = this.score;
                     break 
                 } else if (currentProjectile.left > window.innerWidth) {
                     this.projectile.splice(l, 1);
