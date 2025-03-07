@@ -143,8 +143,8 @@ gameLoop() {
     this.counter++;
     this.update();
 
-    if(this.score % 5 === 0) {
-        this.fallingSpeed += 4
+    if(this.score % 10 === 0) {
+        this.fallingSpeed += 5
     }
     // Create a new obstacle every 140 frames 
     if (this.counter % 120 === 0) {
