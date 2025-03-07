@@ -64,7 +64,7 @@ update() {
 
         if (this.player.gotHit(currentObstacle)) {
             this.lives -= 1;
-            this.progressBar.style.width = `${(this.lives / 3) * 100}%`;
+            this.progressBar.style.width = `${(this.lives / 4) * 100}%`;
             this.updateProgressBar();
             this.obstacles.splice(i, 1);
             currentObstacle.element.remove();
