@@ -2,8 +2,8 @@ class Enemy {
     constructor(gameScreen) {
         this.left = window.innerWidth
         this.top = Math.floor(Math.random() * (gameScreen.offsetHeight - 210)); 
-        this.width = 180;
-        this.height = 210;
+        this.width = 200;
+        this.height = 230;
         this.fallingSpeed = 6
 
         this.enemyImages = [
