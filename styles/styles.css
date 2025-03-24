@@ -72,7 +72,7 @@ html, body {
 /*Bat signal page*/
 
 #bat-page{
-    background-image: url('./images/backgrounds2/backgrounddown.jpg');
+    background-image: url('./images/backgrounds2/game-intro-page.jpg');
     background-size: cover;
     background-repeat:no-repeat;
     background-position: bottom;
@@ -183,7 +183,7 @@ html, body {
 
 #game-main-page{
     display: none; /*change back to display block*/
-    background-image: url('./images/backgrounds2/mainGame.jpg');
+    background-image: url('./images/backgrounds2/game-main-page.jpg');
     background-size:cover;
     background-repeat: repeat-x;
     background-position: bottom left;

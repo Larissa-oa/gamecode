@@ -130,7 +130,7 @@ update() {
             }
     
             if (this.player.gotShot(currentEnemy)) {
-                this.gameOver(); 
+                this.score -=2; 
             }
         }
     }

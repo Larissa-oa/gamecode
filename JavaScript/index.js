@@ -77,7 +77,7 @@ window.onload = function () {
         }
 
         if(event.code === 'Space') {
-           myNewGame.player.element.src = './styles/images/players/superbaileys.png'
+           myNewGame.player.element.src = './styles/images/players/SuperB.png'
            setTimeout(() => {
             myNewGame.player.element.src = './styles/images/players/batleys.png'
         }, 10000); 
