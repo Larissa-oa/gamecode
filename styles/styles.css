@@ -311,6 +311,36 @@ html, body {
     margin-bottom: 20px;
 }
 
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+
+    .container {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .item {
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    
+    header, footer {
+      padding: 5px;
+    }
+  
+    .container {
+      flex-direction: column;
+      padding: 5px;
+    }
+  
+    .item {
+      font-size: 14px;  
+      padding: 10px;
+    }
+  }
+
 
 
 
